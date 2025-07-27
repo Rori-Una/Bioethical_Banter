@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Planning
+{% endblock %}
+
+{% block logout %}
+    <a href="/logout">Logout</a>
+{% endblock %}
+
+{% block nav %}
+    Management Planning Page
+{% endblock %}
+
+{% block main %}
+<!-- form element so that the user can save their work or have an export function where they can export their work as a pdf doc -->
+<form action="/management" method="post" style="text-align:left; max-width:700px;">
+    <div class="planPad set">
+        <h4>To do notes</h4>
+        <textarea class="planning" name="toDo" rows="7"></textarea>
+        <h4>Quick Notes</h4>
+        <textarea class="planning" name="quickNotes" rows="7"></textarea>
+    </div>
+
+    <div class="mainPlan set">
+        <h4>Planning</h4>
+        <textarea class="planning" name="planning" rows="10" cols="70"></textarea>
+    </div>
+    <div class="research set">
+        <h4>Research Papers (Paste text or upload)</h4>
+        <textarea class="planning" name="paper_text" rows="15" cols="100" placehlder="Paste research paper text here..."></textarea>
+    </div>
+</form>
+    
+{% endblock %}

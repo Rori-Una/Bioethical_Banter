@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block nav %}
+    Bioethical Banter
+{% endblock %}
+
+{% block signin %}
+    <!-- make this a link to the sign-in page -->
+     <a  href="/signin">Sign-in</a>
+{% endblock %}
+
+{% block login %}
+    <!-- make this a link to the login page -->
+    <a href="/login">Login</a>    
+{% endblock %}
+
+{% block main %}
+    <h3 class="index">About: Bioethical Banter</h3>
+    <div class="index planning">
+        <h5>What is Bioethical Banter?</h5>
+        <p>A web application with AI integeration used to aid in the decision making of conservation management planning.</p>
+        <h5>Who is it for?</h5>
+        <p>Bioethical Banter is for conservationists, policy makers, researchers and anyone else who is interested in conservation biology</p>
+        <h5>How do I use the application?</h5>
+        <p>In the prompting page you can select an AI generated question of interest, then in the textarea below you, you can brainstorm ideas as to how to answer or approach the question <br> Then to see an AI response to the same question you can click the "See AI response" button. <br> For further brainstorming and management planning, you can headover to the planning page, make a to-do list, take some quick notes and dive into planning your next conservation efforts.</p>
+    </div>
+{% endblock %}

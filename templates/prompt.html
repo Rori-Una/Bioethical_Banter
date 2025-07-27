@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Prompt
+{% endblock %}
+
+{% block logout %}
+    <a href="/logout">Logout</a>
+{% endblock %}
+
+{% block nav %}
+    Prompt Page
+{% endblock %}
+
+{% block main %}
+    <h1>Prompting page</h1>
+    <form action="/prompt" method="post" style="text-align:left; max-width:700px;">
+        <div>
+            <h4>Selected Question</h4>
+            {% if selected_question_id and questions_dict[selected_question_id] %}
+                <textarea readonly rows="3" style="width:100%; font-size:1em; margin-bottom:10px; background:#f5f5f5; border:1px solid #bbb; border-radius:5px; resize:none;">{{ questions_dict[selected_question_id].lstrip('1234567890. ') }}</textarea>
+            {% endif %}
+            <select name="selected_question_id" required style="width:100%; max-width:700px;">
+                <option value="">-- Select a question --</option>
+                {% for qid, qtext in questions_dict.items() %}
+                    <option value="{{ qid }}" {% if selected_question_id == qid %}selected{% endif %}>{{ qtext.lstrip('1234567890. ') }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div style="margin-top:15px;">
+            <h4>Your Answer</h4>
+            <textarea name="user_answer" rows="6" cols="100" placeholder="Write your answer here..." required>{{ user_answer }}</textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    {% if conversation %}
+    <div style="max-width:700px; min-height:300px; margin-bottom:40px;">
+        <h3>Conversation Review</h3>
+        <strong>Question:</strong> {{ conversation.question }}<br>
+        <strong>Your Answer:</strong> {{ conversation.user_answer }}<br>
+        <strong>AI Response:</strong>
+        <div style="background:#e0ffe0; padding:10px; border-radius:5px; min-height:120px;">{{ conversation.ai_response }}</div>
+    </div>
+    {% endif %}
+    <div style="margin-top:60px;">
+        <h6>Once ready, you can move on to the <a href="/management">planning page</a></h6>
+    </div>
+{% endblock %}
