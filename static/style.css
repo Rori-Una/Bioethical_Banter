@@ -1,0 +1,70 @@
+body {
+    background-color: #DAD2BC;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+.logLink {
+    margin-right: 2%;
+    padding: 0% 2% 0% 2%;
+    display: inline;
+    
+}
+
+.mLLink {
+    background-color: #C2D8D4;
+    border-radius: 15%;
+    margin: 0% 5% 0% 5%;
+    padding: 1% 3% 1% 3%;
+    width: 50%;
+}
+.blockNav {
+    background-color: #1E3F20;
+    border-radius: 45%;
+    color: white;
+    margin: 0% 5% 0% 5%;
+    padding: 1% 30% 1% 30%;
+    text-align: center;
+    width: 50%;
+}
+
+.navbar-brand {
+    background-color: #C2D8D4;
+    border-radius: 15%;
+    color: white;
+
+}
+
+.index {
+    margin: 5% 5% 2% 5%;
+}
+
+.planning {
+    background-color: #4E342E;
+    color: white;
+    padding: 2% 5% 2% 5%;
+}
+
+.planPad {
+    margin-left: 4%;
+}
+
+.set {
+    display: inline-block;
+    /* margin-left: 0%; */
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.research {
+    margin-left: 8%;
+}
+
+.mainPlan {
+    margin-left: 5%;
+}
+
+/* bootstrap styling */
