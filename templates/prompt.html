@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Prompt
+{% endblock %}
+
+{% block nav %}
+    Prompt Page
+{% endblock %}
+
+{% block main %}
+    <h1>Prompting page</h1>
+    <!-- has a form component -->
+    <div>
+        <h2>The Scenario</h2>
+        <!-- JS to render potential prompts? -->
+    </div>
+    <div>
+        <form action="/prompt" method="post">
+            <textarea name="userResponse" placeholder="Enter response here..." rows="10" cols="120"></textarea>
+            <button type="submit">Save my response</button>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h3>[This is where the AI response would go]</h3>
+    </div>
+    <h6>Once ready, you can move on to the <a href="/management">planning page</a></h6>
+{% endblock %}
