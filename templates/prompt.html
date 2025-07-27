@@ -13,20 +13,31 @@
 {% endblock %}
 
 {% block main %}
-    <h1>Prompting page</h1>
-    <!-- has a form component -->
-    <div>
-        <h2>The Scenario</h2>       
+<div class="prompt-container">
+    <h1 class="main-heading">Prompting Page</h1>
+
+    <!-- Scenario Box -->
+    <div class="scenario-block">
+        <h2 class="form-label">The Scenario</h2>
+        <p class="scenario-text">[Insert scenario or question prompt here]</p>
     </div>
-    <div>
-        <form action="/prompt" method="post">
-            <textarea name="userResponse" placeholder="Enter response here..." rows="10" cols="120"></textarea>
-            <button type="submit">Save my response</button>
-        </form>
-    </div>
+
+    <!-- User Form -->
+    <form action="/prompt" method="post" class="response-form">
+        <textarea name="userResponse" placeholder="Enter response here..." rows="10" class="form-textarea"></textarea>
+        <button type="submit" class="form-button">Save my response</button>
+    </form>
+
     <hr>
-    <div>
-        <h3>[This is where the AI response would go]</h3>
+
+    <!-- AI Response -->
+    <div class="ai-response-block">
+        <h3 class="ai-heading">AI's Response</h3>
+        <p class="ai-text">[This is where the AI response would go]</p>
     </div>
-    <h6>Once ready, you can move on to the <a href="/management">planning page</a></h6>
+
+    <p class="navigation-hint">
+        Once ready, you can move on to the <a href="/management">planning page</a>.
+    </p>
+</div>
 {% endblock %}
