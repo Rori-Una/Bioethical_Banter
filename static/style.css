@@ -31,12 +31,12 @@ footer {
     width: 50%;
 }
 
-.navbar-brand {
+/* .navbar-brand {
     background-color: #C2D8D4;
     border-radius: 15%;
     color: white;
 
-}
+} */
 
 .index {
     margin: 5% 5% 2% 5%;
@@ -67,4 +67,9 @@ footer {
     margin-left: 5%;
 }
 
+#image {
+    width: 25%;
+    height: 25%;
+    border-radius: 55%;
+}
 /* bootstrap styling */
