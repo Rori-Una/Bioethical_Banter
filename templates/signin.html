@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Login
+    Sign-in
 {% endblock %}
 
 {% block nav %}
@@ -9,15 +9,28 @@
 {% endblock %}
 
 {% block main %}
-<h1>Welcome to Bioethical Banter</h1>
-<form action="/signin" method="post">
-    <h4>username</h4>
-    <input autocomplete="off" name="username" placeholder="Ex. Laura" type="text">
-    <h4>Password</h4>
-    <input name="password" type="password">
-    <h4>Confirm Password</h4>
-    <input name="confirmation" type="password">
-    <button type="submit">Sign-in</button>
-</form>
-{{ message }}
+<h1 class="main-heading">Welcome to Bioethical Banter</h1>
+
+<div class="login-container">
+    <h2 style="font-family: 'DM Serif Display', serif; text-align: center; margin-bottom: 1.5rem;">
+        Create an Account
+    </h2>
+
+    <form action="/signin" method="post" class="login-form">
+        <label for="username" class="form-label">Username</label>
+        <input id="username" name="username" type="text" autocomplete="off" placeholder="Ex. Laura" class="form-input">
+
+        <label for="password" class="form-label">Password</label>
+        <input id="password" name="password" type="password" class="form-input">
+
+        <label for="confirmation" class="form-label">Confirm Password</label>
+        <input id="confirmation" name="confirmation" type="password" class="form-input">
+
+        <button type="submit" class="form-button">Sign Up</button>
+    </form>
+
+    {% if message %}
+        <p class="login-message">{{ message }}</p>
+    {% endif %}
+</div>
 {% endblock %}
