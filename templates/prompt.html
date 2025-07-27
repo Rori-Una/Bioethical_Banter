@@ -4,6 +4,10 @@
     Prompt
 {% endblock %}
 
+{% block logout %}
+    <a href="/logout">Logout</a>
+{% endblock %}
+
 {% block nav %}
     Prompt Page
 {% endblock %}
@@ -12,8 +16,7 @@
     <h1>Prompting page</h1>
     <!-- has a form component -->
     <div>
-        <h2>The Scenario</h2>
-        <!-- JS to render potential prompts? -->
+        <h2>The Scenario</h2>       
     </div>
     <div>
         <form action="/prompt" method="post">
