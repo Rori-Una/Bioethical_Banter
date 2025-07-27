@@ -13,21 +13,33 @@
 {% endblock %}
 
 {% block main %}
-<!-- form element so that the user can save their work or have an export function where they can export their work as a pdf doc -->
-    <div>
-        <h4>To do notes</h4>
-        <textarea name="toDo" rows="7"></textarea>
+<h1 class="main-heading">Management Planning Page</h1>
+
+<form method="post" class="planning-grid">
+
+    <div class="planning-box">
+        <h5>To do notes</h5>
+        <textarea name="toDo" rows="6" class="planning-textarea"></textarea>
     </div>
-    <div>
-        <h4>Quick Notes</h4>
-        <textarea name="quickNotes" rows="7"></textarea>
+
+    <div class="planning-box">
+        <h5>Quick Notes</h5>
+        <textarea name="quickNotes" rows="6" class="planning-textarea"></textarea>
     </div>
-    <div>
-        <h4>Planning</h4>
-        <textarea name="planning" rows="10" cols="70"></textarea>
+
+    <div class="planning-box planning-wide">
+        <h5>Detailed Planning</h5>
+        <textarea name="planning" rows="8" class="planning-textarea"></textarea>
     </div>
-    <div>
-        <h4>Research Papers</h4>
-        <textarea name="papers" rows="15"></textarea>
+
+    <div class="planning-box">
+        <h5>Attach Research Papers</h5>
+        <textarea name="papers" rows="10" class="planning-textarea"></textarea>
     </div>
+
+    <!-- Save Button -->
+    <div class="planning-wide text-center">
+        <button type="submit" class="form-button">Save Work</button>
+    </div>
+</form>
 {% endblock %}
