@@ -1,4 +1,4 @@
-# Conservation Management Assistant
+# Bioethical Banter
 ## What The Project Is
 The Conservation Management Assistant [name subject to change] is an meant to be a web application with AI integeration used to aid in the decision making of conservation management planning. 
 ## How It Works
