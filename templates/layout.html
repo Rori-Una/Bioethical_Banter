@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- metadata -->
+    <!-- Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
@@ -11,134 +11,218 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    
-    <!-- Your Custom Styles -->
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="/static/style.css">
     <style>
-  /* Global styles */
-  body {
-    font-family: 'Lato', sans-serif;
-    background-color: #F5F1E3;
-    margin: 0;
-    padding: 0;
-    color: #2E2E2E;
-  }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #F5F1E3;
+            margin: 0;
+            padding: 0;
+            color: #2E2E2E;
+        }
 
-  /* Main headings */
-  h1.main-heading {
-    font-family: 'DM Serif Display', serif;
-    background-color: #1e3f20;
-    color: white;
-    padding: 1rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-bottom: 2rem;
-  }
+        h1.main-heading {
+            font-family: 'DM Serif Display', serif;
+            background-color: #1e3f20;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
 
-  /* Subheadings (like h5 in about) */
-  h5 {
-    font-family: 'Playfair Display', serif;
-    background-color: #694d46;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
+        h5 {
+            font-family: 'Playfair Display', serif;
+            background-color: #694d46;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
 
-  /* About page content container */
-  div {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-    background-color: #304940;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+        p {
+            font-size: 1rem;
+            color: #F5F1E3;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
 
-  p {
-    font-size: 1rem;
-    color: #F5F1E3;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
+        /* Login & Sign-in */
+        .login-container {
+            max-width: 500px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #304940;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: #F5F1E3;
+        }
 
-  /* Login form */
-  .login-container {
-    max-width: 500px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: #304940;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    color: #F5F1E3;
-  }
+        .form-label {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            background-color: #694d46;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
 
-  .form-label {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    background-color: #694d46;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Lato', sans-serif;
+        }
 
-  .form-input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Lato', sans-serif;
-  }
+        .form-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #c2d8d4;
+            color: #1e3f20;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
 
-  .form-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #c2d8d4;
-    color: #1e3f20;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-family: 'Lato', sans-serif;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+        .form-button:hover {
+            background-color: #a9c4c2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
-  .form-button:hover {
-    background-color: #a9c4c2;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+        .login-message {
+            margin-top: 1rem;
+            color: #ffdddd;
+            background-color: #6c2f2f;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+        }
 
-  .login-message {
-    margin-top: 1rem;
-    color: #ffdddd;
-    background-color: #6c2f2f;
-    padding: 0.75rem;
-    border-radius: 8px;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-  }
-</style>
+        /* Home Page */
+        .home-container {
+            text-align: center;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 2rem 2.5rem;
+            background-color: #694d46;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            color: #F5F1E3;
+        }
+
+        .about-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Planning Page */
+        .planning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .planning-box {
+            background-color: #304940;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+
+        .planning-wide {
+            grid-column: span 2;
+        }
+
+        .planning-textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Lato', sans-serif;
+            margin-top: 0.5rem;
+            resize: vertical;
+        }
+
+        /* Prompt Page (optional style) */
+        .prompt-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .scenario-block,
+        .ai-response-block {
+            background-color: #304940;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            color: #F5F1E3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Lato', sans-serif;
+            resize: vertical;
+        }
+
+        .ai-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .navigation-hint {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
 </head>
+
 <body style="font-family: 'Lato', sans-serif; background-color: #F5F1E3;">
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
-    <!-- Offcanvas Menu -->
+    <!-- Offcanvas Menu Button -->
     <button class="btn" style="background-color: #c2d8d4;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1e3f20" class="bi bi-list" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
         </svg>
     </button>
 
+    <!-- Offcanvas Menu -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header" style="background-color: #1e3f20;">
             <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel" style="font-family: 'DM Serif Display'; color: white;">Bioethical Banter</h5>
@@ -146,6 +230,7 @@
         </div>
         <div class="offcanvas-body" style="background-color: #F5F1E3;">
             <h6><a href="/login">Login</a></h6>
+            <h6><a href="/signin">Sign-in</a></h6>
             <h6><a href="/logout">Logout</a></h6>
             <h6><a href="/">Home Page</a></h6>
             <h6><a href="/prompt">Prompt Page</a></h6>
@@ -163,7 +248,7 @@
                 <div style="color: white;">{% block login %}{% endblock %}</div>
                 <div style="color: white;">{% block logout %}{% endblock %}</div>
             </div>
-        </nav>            
+        </nav>
     </div>
 
     <!-- Main Content -->
