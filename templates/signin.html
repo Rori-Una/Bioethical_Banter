@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block nav %}
+    Sign-in
+{% endblock %}
+
+{% block main %}
+<h1>Welcome to Bioethical Banter</h1>
+<form action="/signin" method="post">
+    <h4>username</h4>
+    <input autocomplete="off" name="username" placeholder="Ex. Laura" type="text">
+    <h4>Password</h4>
+    <input name="password" type="password">
+    <h4>Confirm Password</h4>
+    <input name="confirmation" type="password">
+    <button type="submit">Sign-in</button>
+</form>
+{{ message }}
+{% endblock %}

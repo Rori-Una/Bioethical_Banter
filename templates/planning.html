@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Planning
+{% endblock %}
+
+{% block logout %}
+    <a href="/logout">Logout</a>
+{% endblock %}
+
+{% block nav %}
+    Management Planning Page
+{% endblock %}
+
+{% block main %}
+<!-- form element so that the user can save their work or have an export function where they can export their work as a pdf doc -->
+    <div>
+        <h4>To do notes</h4>
+        <textarea name="toDo" rows="7"></textarea>
+    </div>
+    <div>
+        <h4>Quick Notes</h4>
+        <textarea name="quickNotes" rows="7"></textarea>
+    </div>
+    <div>
+        <h4>Planning</h4>
+        <textarea name="planning" rows="10" cols="70"></textarea>
+    </div>
+    <div>
+        <h4>Research Papers</h4>
+        <textarea name="papers" rows="15"></textarea>
+    </div>
+{% endblock %}
