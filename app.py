@@ -63,7 +63,7 @@ def signin():
             return render_template("signin.html", message=message)
         confirmation = request.form.get("confirmation")
         if not confirmation:
-            message = "Please enter password confrimation"
+            message = "Please enter password confirmation"
             exit 
             return render_template("signin.html", message=message)
         # check passwords they match
@@ -87,6 +87,8 @@ def signin():
 # login route
 @app.route("/login", methods=["GET", "POST"]) # define methods if needed
 def login():
+    questions_dict = {}
+    session["questions_dict"] = questions_dict
     # methods GET and POST
     if request.method == "POST":
         # collect form data, hash password, store in db 
